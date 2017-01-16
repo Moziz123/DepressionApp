@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>WRAP</title>
+
+
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"
+integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"
+integrity="sha256-DI6NdAhhFRnO2k51mumYeDShet3I8AKCQf/tf7ARNhI="
+crossorigin="anonymous"></script>
+  
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+<script>
+      $(function(){
+        $( "[data-role='header'], [data-role='footer']" ).toolbar();
+      }); 
+</script>
+<script>
+    function progress(percent, $element) {
+        var progressBarWidth = percent * $element.width() / 100;
+        $element.find('div').animate({ width: progressBarWidth }, 500).html(percent + "% ");
+    }
+</script>
+<script>
+$(document).on('pageinit', '#step1', function(){
+        progress(0, $('#progressBar'));});
+</script>
+
+<script>
+$(document).on('pageinit', '#step2', function(){
+        progress(11, $('#progressBar2'));
+        });
+</script>
+<script>
+$(document).on('pageinit', '#step3', function(){
+        progress(22, $('#progressBar3'));
+        });
+</script>
+<script>
+$(document).on('pageinit', '#step4', function(){
+        progress(33, $('#progressBar4'));
+        });
+</script>
+<script>
+$(document).on('pageinit', '#step5', function(){
+        progress(44, $('#progressBar5'));});
+</script>
+<script>
+$(document).on('pageinit', '#step6', function(){
+        progress(55, $('#progressBar6'));});
+</script>
+<script>
+$(document).on('pageinit', '#step7', function(){
+        progress(66, $('#progressBar7'));});
+</script>
+<script>
+$(document).on('pageinit', '#step8', function(){
+        progress(77, $('#progressBar8'));});
+</script>
+<script>
+$(document).on('pageinit', '#step9', function(){
+        progress(88, $('#progressBar9'));});
+</script>
+<script>
+$(document).on('pageinit', '#step10', function(){
+        progress(100, $('#progressBar10'));});
+</script>
+
+<style>
+.transition (@animation: ease-in, @time: 1s) {
+  transition: width @animation @time;
+  -webkit-transition: width @animation @time;
+  -moz-transition: width @animation @time;
+  -o-transition: width @animation @time;
+}
+.bar-con{
+  background-color:#ccc;
+  height:0.5em;
+  margin-bottom:1em;
+}
+.bar{
+  float:left;
+  height:100%;
+  width:0%;
+}
+.bar-two .bar{
+  background-color:#1975FF;
+  .transition(@time:3s, @animation:ease-in-out);
+}
+h3 {
+text-align:center;
+}
+.nav-bordera {
+border-top-left-radius:30px;
+border-bottom-left-radius:30px;
+}
+
+.nav-borderb {
+border-top-right-radius:30px;
+border-bottom-right-radius:30px;
+}
+    #progressBar, #progressBar2, #progressBar3, #progressBar4, #progressBar5, #progressBar6, #progressBar7, #progressBar8, #progressBar9, #progressBar10 {
+        width: 400px;
+        height: 22px;
+        border: 1px solid #111;
+        background-color: #292929;
+border-top-left-radius:30px;
+border-bottom-left-radius:30px;
+border-top-right-radius:30px;
+border-bottom-right-radius:30px;
+    }
+    #progressBar div, #progressBar2 div, #progressBar3 div, #progressBar4 div, #progressBar5 div, #progressBar6 div, #progressBar7 div, #progressBar8 div, #progressBar9 div, #progressBar10 div {
+        height: 100%;
+        color: #fff;
+        text-align: right;
+        line-height: 22px; /* same as #progressBar height if we want text middle aligned */
+        width: 0;
+        background-color: #0099ff;
+border-top-left-radius:30px;
+border-bottom-left-radius:30px;
+border-top-right-radius:30px;
+border-bottom-right-radius:30px;
+    }
+
+</style>
+ 
+<meta name="viewport" content="width=device-width" />
+  
+</head>
+
+<body>
+<div style="background-color:#FFFFFF;" data-role="header" data-position="fixed">
+<div>
+<h3 style="float:left">WRAP</h3>
+<h3 style="float:right">Level 5</h3>
+</div>
+</div>
+<section id="step1" data-role="page">
+<div class="ui-content">
+
+
+ <div data-role="navbar">
+<nav>
+ <div class="ui-grid-a">
+            <ul>
+
+                            <div class="ui-block-a">
+                <li><a href="" class="ui-btn-active nav-bordera">Day 1</a></li>
+                                </div>
+                                <div class="ui-block-b">
+                <li><a href="">Day 2</a></li>
+                                </div>
+                                <div class="ui-block-c">
+                <li><a href="">Day 3</a></li>
+                                </div>
+                                <div class="ui-block-d">
+                <li><a href="">Day 4</a></li>
+                                </div>
+                                <div class="ui-block-e">
+                                <li><a href="" class="nav-borderb">Day 5</a></l$
+                                </div>
+
+            </ul>
+                        </div>
+          </nav>
+</div>
+
+<div style="text-align:center;">
+<h3>Introduction to Level 5</h3>
+<div class="ui-grid-a" style="text-align:center;">
+<div class="ui-block-a">
+<iframe src="https://www.youtube.com/embed/JRMOMjCoR58" frameborder="0" allowfullscreen></iframe>
+</div></div>
+<div class="ui-grid-a" style="text-align:center;">
+<div class="ui-block-a">
+<div style="min-width:300px">
+What is Lorem Ipsum?
+Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+It has survived not only five centuries, but also the leap into electronic typesetting,
+remaining essentially unchanged. It was popularised in the 1960s with the release of
+Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+</div>
+</div></div>
+<a href="#step2" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>
+</div></div>
+</div>
+</section>
+
+<section id="step2" data-role="page">
+<div class="ui-content">
+
+<form action="" method="post">
+<div class="ui-grid-a" style="text-align:center;">
+<div id="progressBar2"><div></div></div></div>
+<br>
+ <div data-role="navbar">
+<nav>
+ <div class="ui-grid-a">
+            <ul>
+
+                            <div class="ui-block-a">
+                <li><a href="" class="ui-btn-active nav-bordera">Day 1</a></li>
+                                </div>
+                                <div class="ui-block-b">
+                <li><a href="">Day 2</a></li>
+                                </div>
+                                <div class="ui-block-c">
+                <li><a href="">Day 3</a></li>
+                                </div>
+                                <div class="ui-block-d">
+                <li><a href="">Day 4</a></li>
+                                </div>
+                                <div class="ui-block-e">
+                                <li><a href="" class="nav-borderb">Day 5</a></l$
+                                </div>
+
+            </ul>
+                        </div>
+          </nav>
+</div>
+
+<h3>Aggravating event</h3>
+
+<label for="textarea-1"></label>
+<textarea name="ans1" id="textarea-1">
+</textarea>
+<div class="ui-grid-a">
+                <div class="ui-block-a">
+<a href="#step1" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a>
+</div>
+                <div class="ui-block-b">
+<a href="#step3" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>
+</div>
+            </div>
+</div>
+</section>
+
+<section id="step3" data-role="page">
+<div class="ui-content">
+<div class="ui-grid-a" style="text-align:center;">
+<div id="progressBar3"><div></div></div></div>
+<br>
+ <div data-role="navbar">
+<nav>
+ <div class="ui-grid-a">
+            <ul>
+
+                            <div class="ui-block-a">
+                <li><a href="" class="ui-btn-active nav-bordera">Day 1</a></li>
+                                </div>
+                                <div class="ui-block-b">
+                <li><a href="">Day 2</a></li>
+                                </div>
+                                <div class="ui-block-c">
+                <li><a href="">Day 3</a></li>
+                                </div>
+                                <div class="ui-block-d">
+                <li><a href="">Day 4</a></li>
+                                </div>
+                                <div class="ui-block-e">
+                                <li><a href="" class="nav-borderb">Day 5</a></l$
+                                </div>
+
+            </ul>
+                        </div>
+          </nav>
+</div>
+
+<h3>How bad was it? </h3>
+<label for="textarea-2"></label>
+<textarea name="ans2" id="textarea-2" placeholder="On scale 1 - 10">
+</textarea>
+<div class="ui-grid-a">
+                <div class="ui-block-a">
+<a href="#step2" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a>
+</div>
+                <div class="ui-block-b">
+<a href="#step4" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>
+</div>
+            </div>
+</div>
+</section>
+
+<section id="step4" data-role="page">
+<div class="ui-content">
+<div class="ui-grid-a" style="text-align:center;">
+<div id="progressBar4"><div></div></div></div>
+<br>
+ <div data-role="navbar">
+<nav>
+ <div class="ui-grid-a">
+            <ul>
+
+                            <div class="ui-block-a">
+                <li><a href="" class="ui-btn-active nav-bordera">Day 1</a></li>
+                                </div>
+                                <div class="ui-block-b">
+                <li><a href="">Day 2</a></li>
+                                </div>
+                                <div class="ui-block-c">
+                <li><a href="">Day 3</a></li>
+                                </div>
+                                <div class="ui-block-d">
+                <li><a href="">Day 4</a></li>
+                                </div>
+                                <div class="ui-block-e">
+                                <li><a href="" class="nav-borderb">Day 5</a></l$
+                                </div>
+
+            </ul>
+                        </div>
+          </nav>
+</div>
+
+<h3>Who trigger the event?</h3>
+<label for="textarea-3"></label>
+<textarea name="ans3" id="textarea-3" placeholder="Friend, Family member, Stranger">
+</textarea>
+<div class="ui-grid-a">
+                <div class="ui-block-a">
+<a href="#step3" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a>
+</div>
+                <div class="ui-block-b">
+<a href="#step5" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>
+</div>
+            </div>
+</div>
+</form>
+
+</section>
+
+<section id="step5" data-role="page">
+<div class="ui-content">
+<div class="ui-grid-a" style="text-align:center;">
+<div id="progressBar5"><div></div></div></div>
+<br>
+ <div data-role="navbar">
+<nav>
+ <div class="ui-grid-a">
+            <ul>
+
+                            <div class="ui-block-a">
+                <li><a href="" class="ui-btn-active nav-bordera">Day 1</a></li>
+                                </div>
+                                <div class="ui-block-b">
+                <li><a href="">Day 2</a></li>
+                                </div>
+                                <div class="ui-block-c">
+                <li><a href="">Day 3</a></li>
+                                </div>
+                                <div class="ui-block-d">
+                <li><a href="">Day 4</a></li>
+                                </div>
+                                <div class="ui-block-e">
+                                <li><a href="" class="nav-borderb">Day 5</a></l$
+                                </div>
+
+            </ul>
+                        </div>
+          </nav>
+</div>
+
+<h3>What is it that got to you?</h3>
+<label for="textarea-4"></label>
+<textarea name="ans4" id="textarea-4">
+</textarea>
+<div class="ui-grid-a">
+<div class="ui-block-a">
+<a href="#step4" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a>
+</div>
+<div class="ui-block-b">
+<a href="#step6" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>
+</div>
+</div>
+</div>
+</form>
+</section>
+
+<section id="step6" data-role="page">
+<div class="ui-content">
+<div class="ui-grid-a" style="text-align:center;">
+<div id="progressBar6"><div></div></div></div>
+<br>
+ <div data-role="navbar">
+<nav>
+ <div class="ui-grid-a">
+            <ul>
+
+                            <div class="ui-block-a">
+                <li><a href="" class="ui-btn-active nav-bordera">Day 1</a></li>
+                                </div>
+                                <div class="ui-block-b">
+                <li><a href="">Day 2</a></li>
+                                </div>
+                                <div class="ui-block-c">
+                <li><a href="">Day 3</a></li>
+                                </div>
+                                <div class="ui-block-d">
+                <li><a href="">Day 4</a></li>
+                                </div>
+                                <div class="ui-block-e">
+                                <li><a href="" class="nav-borderb">Day 5</a></l$
+                                </div>
+
+            </ul>
+                        </div>
+          </nav>
+</div>
+
+<h3>Where did it take place?</h3>
+<label for="textarea-4"></label>
+<textarea name="ans5" id="textarea-5">
+</textarea>
+<div class="ui-grid-a">
+<div class="ui-block-a">
+<a href="#step5" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a>
+</div>
+<div class="ui-block-b">
+<a href="#step7" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>
+</div>
+</div>
+</div>
+</form>
+</section>
+
+<section id="step7" data-role="page">
+<div class="ui-content">
+<div class="ui-grid-a" style="text-align:center;">
+<div id="progressBar7"><div></div></div></div>
+<br>
+ <div data-role="navbar">
+<nav>
+ <div class="ui-grid-a">
+            <ul>
+
+                            <div class="ui-block-a">
+                <li><a href="" class="ui-btn-active nav-bordera">Day 1</a></li>
+                                </div>
+                                <div class="ui-block-b">
+                <li><a href="">Day 2</a></li>
+                                </div>
+                                <div class="ui-block-c">
+                <li><a href="">Day 3</a></li>
+                                </div>
+                                <div class="ui-block-d">
+                <li><a href="">Day 4</a></li>
+                                </div>
+                                <div class="ui-block-e">
+                                <li><a href="" class="nav-borderb">Day 5</a></l$
+                                </div>
+
+            </ul>
+                        </div>
+          </nav>
+</div>
+
+<h3>When did it happen?</h3>
+<label for="textarea-6"></label>
+<textarea name="ans6" id="textarea-6">
+</textarea>
+<div class="ui-grid-a">
+<div class="ui-block-a">
+<a href="#step6" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a>
+</div>
+<div class="ui-block-b">
+<a href="#step8" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>
+</div>
+</div>
+</div>
+</form>
+</section>
+
+<section id="step8" data-role="page">
+<div class="ui-content">
+<div class="ui-grid-a" style="text-align:center;">
+<div id="progressBar8"><div></div></div></div>
+<br>
+ <div data-role="navbar">
+<nav>
+ <div class="ui-grid-a">
+            <ul>
+
+                            <div class="ui-block-a">
+                <li><a href="" class="ui-btn-active nav-bordera">Day 1</a></li>
+                                </div>
+                                <div class="ui-block-b">
+                <li><a href="">Day 2</a></li>
+                                </div>
+                                <div class="ui-block-c">
+                <li><a href="">Day 3</a></li>
+                                </div>
+                                <div class="ui-block-d">
+                <li><a href="">Day 4</a></li>
+                                </div>
+                                <div class="ui-block-e">
+                                <li><a href="" class="nav-borderb">Day 5</a></l$
+                                </div>
+
+            </ul>
+                        </div>
+          </nav>
+</div>
+
+<h3>What is the consequence of it happening?</h3>
+<label for="textarea-7"></label>
+<textarea name="ans7" id="textarea-7">
+</textarea>
+<div class="ui-grid-a">
+<div class="ui-block-a">
+<a href="#step7" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a>
+</div>
+<div class="ui-block-b">
+<a href="#step9" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>
+</div>
+</div>
+</div>
+</form>
+</section>
+
+<section id="step9" data-role="page">
+<div class="ui-content">
+<div class="ui-grid-a" style="text-align:center;">
+<div id="progressBar9"><div></div></div></div>
+<br>
+ <div data-role="navbar">
+<nav>
+ <div class="ui-grid-a">
+            <ul>
+
+                            <div class="ui-block-a">
+                <li><a href="" class="ui-btn-active nav-bordera">Day 1</a></li>
+                                </div>
+                                <div class="ui-block-b">
+                <li><a href="">Day 2</a></li>
+                                </div>
+                                <div class="ui-block-c">
+                <li><a href="">Day 3</a></li>
+                                </div>
+                                <div class="ui-block-d">
+                <li><a href="">Day 4</a></li>
+                                </div>
+                                <div class="ui-block-e">
+                                <li><a href="" class="nav-borderb">Day 5</a></l$
+                                </div>
+
+            </ul>
+                        </div>
+          </nav>
+</div>
+
+<h3>What did you feel?</h3>
+<label for="textarea-8"></label>
+<textarea name="ans8" id="textarea-8">
+</textarea>
+<div class="ui-grid-a">
+<div class="ui-block-a">
+<a href="#step8" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a>
+</div>
+<div class="ui-block-b">
+<a href="#step10" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>
+</div>
+</div>
+</div>
+</form>
+</section>
+
+<section id="step10" data-role="page">
+<div class="ui-content">
+<div class="ui-grid-a" style="text-align:center;">
+<div id="progressBar10"><div></div></div></div>
+<br>
+ <div data-role="navbar">
+<nav>
+ <div class="ui-grid-a">
+            <ul>
+
+                            <div class="ui-block-a">
+                <li><a href="" class="ui-btn-active nav-bordera">Day 1</a></li>
+                                </div>
+                                <div class="ui-block-b">
+                <li><a href="">Day 2</a></li>
+                                </div>
+                                <div class="ui-block-c">
+                <li><a href="">Day 3</a></li>
+                                </div>
+                                <div class="ui-block-d">
+                <li><a href="">Day 4</a></li>
+                                </div>
+                                <div class="ui-block-e">
+                                <li><a href="" class="nav-borderb">Day 5</a></l$
+                                </div>
+
+            </ul>
+                        </div>
+          </nav>
+</div>
+
+<h3>What did you do?</h3>
+<label for="textarea-9"></label>
+<textarea name="ans9" id="textarea-9">
+</textarea>
+<div class="ui-grid-a">
+                <div class="ui-block-a">
+<a href="#step9" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a>
+</div>
+                <div class="ui-block-b">
+<input type="submit" value="Submit" data-icon="action" data-iconpos="right"/>
+</div>
+            </div>
+</div>
+</form>
+
+</section>
+
+
+
+<div style="background-color:#FFFFFF;" data-role="footer" data-position="fixed">
+  <nav data-role="navbar">
+            <ul>
+                <li><a href="index.html" class="ui-btn ui-icon-home ui-btn-icon-top ui-btn-active ui-state-persist">HOME</a></li>
+                <li><a href="pastActivities.html" class="ui-btn ui-icon-search ui-btn-icon-top">VIEW PAST ACTIVITIES</a></li>
+                <li><a href="" class="ui-btn ui-icon-lock ui-btn-icon-top">LOG OUT</a></li>
+            </ul>
+          </nav>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+ <!DOCTYPE html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js" integrity="sha256-DI6NdAhhFRnO2k51mumYeDShet3I8AKCQf/tf7ARNhI=" crossorigin="anonymous"></script>
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+
+
+
+<html>
+<body>
+<script>
+//$("#select1").change(function() {
+//  if ($(this).data('options') == undefined) {
+//    /*Taking an array of all options-2 and kind of embedding it on the select1*/
+//    $(this).data('options', $('#select2 option').clone());
+//  }
+// var id = $(this).val();
+// var options = $(this).data('options').filter('[value=' + id + ']');
+//  $('#select2').html(options);
+//}); 
+</script>
+<!--
+
+<select name="select1" id="select1">
+  <option value="1">Fruit</option>
+  <option value="2">Animal</option>
+  <option value="3">Bird</option>
+  <option value="4">Car</option>
+</select>
+
+
+<select name="select2" id="select2">
+  <option value="1">Banana</option>
+  <option value="1">Apple</option>
+  <option value="1">Orange</option>
+  <option value="2">Wolf</option>
+  <option value="2">Fox</option>
+  <option value="2">Bear</option>
+  <option value="3">Eagle</option>
+  <option value="3">Hawk</option>
+  <option value="4">BWM<option>
+</select> -->
+<script>
+var arr = [
+  {val : 1, text: 'sport'},
+  {val : 2, text: 'pub'},
+  {val : 3, text: 'Three'}
+];
+
+var sel = $('<select>').appendTo('body');
+$(arr).each(function() {
+ sel.append($("<option>").attr('value',this.val).text(this.text));
+});
+</script>
+<div id="one"></div>
+<div id="two"></div>
+<div id="three"></div>
+<div id="four"></div>
+<div id="five"></div>
+ 
+<script>
+var arr = [ "one", "two", "three", "four", "five" ];
+var obj = { one: 1, two: 2, three: 3, four: 4, five: 5 };
+ 
+jQuery.each( arr, function( i, val ) {
+  $( "#" + val ).text( "Mine is " + val + "." );
+ 
+  // Will stop running after "three"
+  return ( val !== "three" );
+});
+ 
+jQuery.each( obj, function( i, val ) {
+  $( "#" + i ).append( document.createTextNode( " - " + val ) );
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome</title>
+
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<link rel="stylesheet" href="css/style.css"/>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"
+integrity="sha256-DI6NdAhhFRnO2k51mumYeDShet3I8AKCQf/tf7ARNhI="
+crossorigin="anonymous"></script>
+  
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/screenfull.js/3.0.2/screenfull.min.js" ></script>
+
+<script src="js/script.js"></script>
+<script src="js/script1.js"></script>
+<script>
+if (screenfull.enabled) {
+    screenfull.request();
+}
+</script>
+
+<meta name="viewport" content="width=device-width" />
+<script>
+
+
+$(document).on('pageinit', '#page2', function(){
+	progress(50, $('#progressBar'));});
+</script>
+<script>
+$(document).on('pageinit', '#page3', function(){
+	progress(100, $('#progressBar2'));
+	});
+</script>
+
+ 
+
+
+<script>
+    function progress(percent, $element) {
+        var progressBarWidth = percent * $element.width() / 100;
+        $element.find('div').animate({ width: progressBarWidth }, 1000).html(percent + "% ");
+    }
+</script>
+
+<style>
+    #progressBar, #progressBar2{
+        width: 300px;
+        height: 22px;
+        border: 1px solid #111;
+        background-color: #292929;
+    }
+    #progressBar div, #progressBar2 div{
+        height: 100%;
+        color: #fff;
+        text-align: right;
+        line-height: 22px; /* same as #progressBar height if we want text middle aligned */
+        width: 0;
+        background-color: #0099ff;
+    }
+</style>
+
+</head>
+<body>
+<script>
+$(function () { 
+
+    
+    $('#register1').click(function() {
+    if (screenfull.enabled) {
+        screenfull.request();
+    }
+});
+});
+</script>
+
+   <div data-role="page" id="page2">
+
+<div data-role="main" class="ui-content">
+<div class="ui-grid-solo">
+<div class="ui-block-a">
+<div id="progressBar"><div></div></div>
+</div>
+</div>
+
+<br>
+<div id="result"></div>
+<form action="#" method="post" data-ajax="true">
+
+<span class="error_form" id="username_error"></span>
+<label for="username">Username : <span></span></label>
+<input type="text" name="username" id="username" placeholder="Enter username" value="">
+
+<span class="error_form" id="password_error"></span>
+<label for="password">Create password : <span></span></label>
+<input type="text" name="password" id="password" placeholder="Enter password">
+
+<span class="error_form" id="password_error_confirmation"></span>
+<label for="passwordAgain">Confirm password : <span></span></label>
+<input type="text" name="password_confirmation" id="password_confirmation" placeholder="Enter password again">
+
+<div class="ui-grid-a">
+                <div class="ui-block-a">
+<a href="welcome.html" data-role="button" data-icon="arrow-l" data-iconpos="left" data-transition="pop">Back</a>
+</div>
+                <div class="ui-block-b">
+<a href="http://depressionapp1.westeurope.cloudapp.azure.com/register.html#page3"  id="register1" data-role="button" data-icon="arrow-r" data-iconpos="right" data-transition="pop">Next</a>
+</div>
+            </div>
+
+
+</form>
+</div>
+
+</div>
+   
+   
+   <div data-role="page" id="page3">
+<div data-role="main" class="ui-content">
+<div class="ui-grid-solo">
+<div class="ui-block-a">
+<div id="progressBar2"><div></div></div>
+</div>
+</div>
+
+<br>
+
+
+
+
+<form action="#" method="post">
+
+<span class="error_form" id="gender_error"></span>
+<fieldset data-role="controlgroup">
+<legend>Gender:</legend>
+
+<select name="gender" id="gender">
+
+  <option></option>
+  
+  <option value="male">male</option>
+
+  <option value="female">female</option>
+
+</select>
+
+<div id="result1"></div>
+
+
+</fieldset>
+
+<span class="error_form" id="email_error"></span>
+<label for="email">Email: <span></span></label>
+<input type="email" id="email" name="email" placeholder="Enter email" value="">
+
+<div class="ui-grid-a">
+                <div class="ui-block-a">
+<a href="#page2" data-role="button" data-icon="arrow-l" data-iconpos="left" data-transition="pop">Back</a>
+</div>
+                <div class="ui-block-b">
+<a href="http://depressionapp1.westeurope.cloudapp.azure.com/welcome.html"  rel="external" id="register2" data-role="button" data-icon="arrow-r" data-iconpos="right" data-transition="pop">Next</a>
+
+
+</div>
+            </div>
+
+</form>
+
+</div>
+</div>
+</body>
+</html>

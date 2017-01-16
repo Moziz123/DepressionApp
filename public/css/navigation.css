@@ -1,0 +1,163 @@
+	
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 8px;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 40px;
+    color: #0C9AF2;
+    display: block;
+    transition: 0.3s   
+}
+
+.sidenav ul li{
+    text-align: center;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #002db3;
+}
+
+.closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 40px !important;
+    margin-left: 50px;
+    font-weight: bold;
+}
+
+
+@media screen and (max-height: 450px) {
+   .sidenav {padding-top: 15px;}
+   .sidenav a {font-size: 18px;}
+}
+
+ul li a#chats:active image#chats1{
+    background-image: url('images/chat1.png');
+}
+
+nav{
+    width: 100%;
+    -webkit-animation: mymove 1.5s ease-in-out infinite alternate;
+    /*Chrome, Safari, Opera */
+    animation: yourmove 1.5s ease-in-out infinite alternate;	
+    border: 1px solid #ccc;
+    border-right: none;   
+}
+
+div.footerText{
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;     
+}
+
+.caption{
+    display: block;
+}
+
+nav ul {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    list-style: none;
+    float: left;
+    text-align: center;
+    border-left: 3px solid #0C9AF2;
+    border-right: 3px solid  #006FFF;
+    width: 25%; /* fallback for non-calc() browsers */
+    width: calc(100% / 4);
+    box-sizing: border-box;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+nav ul li:first-child {
+    border-left: none;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 25px 0 10px;	
+}
+
+nav ul li a #menuBar {
+    padding: 20px 0 15px;	
+}
+
+.active {
+    background-color: #ffffff;
+    border-bottom: 10px solid #0C9AF2;
+    color: #0C9AF2;
+    -webkit-animation: hismove 2s ease-in-out infinite alternate;
+    /*Chrome, Safari, Opera */
+    animation: hermove 2s ease-in-out infinite alternate;	
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove {
+    from {background-color: #0C9AF2;}
+    to {background-color: #006FFF;}
+	
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes yourmove {
+    from {background-color: #006FFF;}
+    to {background-color: #0C9AF2;}
+}
+
+/* Standard syntax */
+@keyframes mymove {
+    from {background-color: #0C9AF2;}
+    to {background-color: #006FFF;}
+}
+
+/* Standard syntax */
+@keyframes yourmove {
+   from {background-color: #006FFF;}
+   to {background-color: #0C9AF2;}
+}
+
+
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes hismove {
+    from {background-color: #ffffff;}
+    to {background-color: #e6f0ff;}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes hermove {
+    from {background-color: #e6f0ff;}
+    to {background-color: #ffffff;}
+}
+
+/* Standard syntax */
+@keyframes hismove {
+    from {background-color: #ffffff;}
+    to {background-color: #e6f0ff;}
+
+}
+
+/* Standard syntax */
+@keyframes hermove {
+    from {background-color: #e6f0ff;}
+    to {background-color: #ffffff;}
+}

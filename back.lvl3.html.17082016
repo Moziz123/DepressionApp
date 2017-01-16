@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WRAP</title>
+
+
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"
+integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"
+integrity="sha256-DI6NdAhhFRnO2k51mumYeDShet3I8AKCQf/tf7ARNhI="
+crossorigin="anonymous"></script>
+  
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+<script>
+      $(function(){
+        $( "[data-role='header'], [data-role='footer']" ).toolbar();
+      }); 
+</script>
+<script>
+//$("#name_of_id").val()
+
+
+$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrap         = $(".input_fields_wrap"); //Fields wrapper
+    var add_button      = $(".add_field_button"); //Add button ID
+
+	var wrapper         = $(".input_fields_wrapper"); //Fields wrapper
+    var add_activities      = $(".add_activities"); //Add button ID
+	
+	var x = 0; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+           // $(wrap).append('<div><input type="text" name="myFriends[]"><a href="#" class="remove_field" data-role="button">Remove</a></div>'); //add input box
+            $(wrap).append('<div class="ui-grid-a"><input class="ui-input-text ui-corner-all ui-shadow-inset friend" type="text" name="myFriends'+x+'" id="myFriends'+x+'" placeholder="Friend"><a href="#" style="float:right" class="remove_field ui-btn ui-corner-all ui-shadow">Delete</a></div>'); //add input box 
+
+        }
+    });
+	
+	var y = 0; //initlal text box count
+    $(add_activities).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(y < max_fields){ //max input box allowed
+            y++; //text box increment
+           // $(wrapper).append('<div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="text" name="myActivities[]"><a href="#" class="remove_field2" data-role="button">Remove</a></div>'); //add input box 
+           // $(wrapper).append('<div data-inline="true"><input class="ui-input-text ui-corner-all ui-shadow-inset" type="text" name="myActivities[]"><a href="#" style="float:right" class="remove_field2 ui-btn">Delete</a></div>'); //add input box 
+           // $(wrapper).append('<div class="ui-grid-a"><input style="width:60%" class="ui-input-text ui-corner-all ui-shadow-inset" type="text" name="myActivities[]"><a href="#" style="float:right" class="remove_field2 ui-btn ui-corner-all ui-shadow">Delete</a></div>'); //add input box 
+// this is working don't touch  $(wrapper).append('<div class="ui-grid-a"><input class="ui-input-text ui-corner-all ui-shadow-inset" type="text" name="myActivities[]" placeholder="Activity"><a href="#" style="float:right" class="remove_field2 ui-btn ui-corner-all ui-shadow">Delete</a></div>'); //add input box 
+            $(wrapper).append('<div class="ui-grid-a"><input class="ui-input-text ui-corner-all ui-shadow-inset" type="text" name="myActivities'+y+'" placeholder="Activity"><a href="#" style="float:right" class="remove_field2 ui-btn ui-corner-all ui-shadow">Delete</a></div>'); //add input box 
+        }
+    });
+    
+       
+    $(wrap).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+
+    $(wrapper).on("click",".remove_field2", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); y--;
+    })
+});
+
+</script>
+<script>
+/*
+$(document).ready(function() {
+$(save_friends).click(function(){
+var save_friends = $(".save_friends"); 	//next button on friends page 
+
+var answers = [];
+$.each($('.friend'), function() {
+answers.push($(this).val()); 
+}); 
+alert(answers); 
+*/
+</script>
+<script>
+    function progress(percent, $element) {
+        var progressBarWidth = percent * $element.width() / 100;
+        $element.find('div').animate({ width: progressBarWidth }, 500).html(percent + "% ");
+    }
+</script>
+<script>
+$(document).on('pageinit', '#step1', function(){
+        progress(0, $('#progressBar'));});
+</script>
+
+<script>
+$(document).on('pageinit', '#step2', function(){
+        progress(25, $('#progressBar2'));
+        });
+</script>
+<script>
+$(document).on('pageinit', '#step3', function(){
+        progress(50, $('#progressBar3'));
+        });
+</script>
+<script>
+$(document).on('pageinit', '#step4', function(){
+        progress(75, $('#progressBar4'));
+        });
+</script> 
+
+
+<meta name="viewport" content="width=device-width" />
+<style>
+h3 {
+text-align:center;
+}
+.ui-input-text { height: 40px !important }
+.nav-bordera {
+border-top-left-radius:30px;
+border-bottom-left-radius:30px;
+}
+
+.nav-borderb {
+border-top-right-radius:30px;
+border-bottom-right-radius:30px;
+}
+    #progressBar, #progressBar2, #progressBar3, #progressBar4, #progressBar5 {
+        width: 400px;
+        height: 22px;
+        border: 1px solid #111;
+        background-color: #292929;
+border-top-left-radius:30px;
+border-bottom-left-radius:30px;
+border-top-right-radius:30px;
+border-bottom-right-radius:30px;
+    }
+    #progressBar div, #progressBar2 div, #progressBar3 div, #progressBar4 div, #progressBar5 div {
+        height: 100%;
+        color: #fff;
+        text-align: right;
+        line-height: 22px; /* same as #progressBar height if we want text middle aligned */
+        width: 0;
+        background-color: #0099ff;
+border-top-left-radius:30px;
+border-bottom-left-radius:30px;
+border-top-right-radius:30px;
+border-bottom-right-radius:30px;
+    }
+
+</style>  
+</head>
+
+<body>
+<div style="background-color:#FFFFFF;" data-role="header" data-position="fixed">
+<div>
+<h3 style="float:left">WRAP</h3>
+<h3 style="float:right">Level 3</h3>
+</div>
+</div>
+<section id="step1" data-role="page">
+<div class="ui-content">
+<div class="ui-grid-a" style="text-align:center;">
+
+ <div data-role="navbar">
+<nav>
+ <div class="ui-grid-a">
+            <ul>
+
+                            <div class="ui-block-a">
+                <li><a href="" class="ui-btn-active nav-bordera">Day 1</a></li>
+                                </div>
+                                <div class="ui-block-b">
+                <li><a href="">Day 2</a></li>
+                                </div>
+                                <div class="ui-block-c">
+                <li><a href="">Day 3</a></li>
+                                </div>
+                                <div class="ui-block-d">
+                <li><a href="">Day 4</a></li>
+                                </div>
+                                <div class="ui-block-e">
+                                <li><a href="" class="nav-borderb">Day 5</a></l$
+                                </div>
+
+            </ul>
+                        </div>
+          </nav>
+</div>
+
+<div style="text-align:center;">
+<h3>Introduction to Level 3</h3>
+<div class="ui-grid-a" style="text-align:center;">
+<div class="ui-block-a">
+<iframe src="https://www.youtube.com/embed/JRMOMjCoR58" frameborder="0" allowfullscreen></iframe>
+</div></div>
+<div class="ui-grid-a" style="text-align:center;">
+<div class="ui-block-a">
+<div style="min-width:300px">
+What is Lorem Ipsum?
+Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+It has survived not only five centuries, but also the leap into electronic typesetting,
+remaining essentially unchanged. It was popularised in the 1960s with the release of
+Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+</div>
+</div></div>
+<a href="#step2" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>
+</div></div>
+</div>
+</section>
+
+<section id="step2" data-role="page">
+<div class="ui-content">
+<div class="ui-grid-a" style="text-align:center;">
+<div id="progressBar2"><div></div></div></div>
+<br>
+
+<form action="" method="post">
+ <div data-role="navbar">
+<nav>
+ <div class="ui-grid-a">
+            <ul>
+
+                            <div class="ui-block-a">
+                <li><a href="" class="ui-btn-active nav-bordera">Day 1</a></li>
+                                </div>
+                                <div class="ui-block-b">
+                <li><a href="">Day 2</a></li>
+                                </div>
+                                <div class="ui-block-c">
+                <li><a href="">Day 3</a></li>
+                                </div>
+                                <div class="ui-block-d">
+                <li><a href="">Day 4</a></li>
+                                </div>
+                                <div class="ui-block-e">
+                                <li><a href="" class="nav-borderb">Day 5</a></l$
+                                </div>
+
+            </ul>
+                        </div>
+          </nav>
+</div>
+
+<h3>List friends that you would like to spend time with.</h3>
+
+<div class="input_fields_wrap">
+<!--    <button class="add_field_button">Add your Friends</button>
+<!--    <div><input type="text" name="myFriends1" placeholder="Friend"></div> -->
+        <div class="ui-grid-a"><input class="ui-input-text ui-corner-all ui-shadow-inset" type="text" id="myFriends1" placeholder="Friend"></div> 
+        <div class="ui-grid-a"><input class="ui-input-text ui-corner-all ui-shadow-inset" type="text" id="myFriends2" placeholder="Friend"></div> 
+        <div class="ui-grid-a"><input class="ui-input-text ui-corner-all ui-shadow-inset" type="text" id="myFriends3" placeholder="Friend"></div> 
+        <div class="ui-grid-a"><input class="ui-input-text ui-corner-all ui-shadow-inset" type="text" id="myFriends4" placeholder="Friend"></div> 
+        <div class="ui-grid-a"><input class="ui-input-text ui-corner-all ui-shadow-inset" type="text" id="myFriends5" placeholder="Friend"></div> 
+</div>
+<!-- <form><input type="submit" value="Save"></form> -->
+<script>
+/* var newarray=[];
+$('.friend').each(function(){
+newarray.push($(this).val());
+});
+console.log(newarray); */
+</script>
+
+<script>
+function friends()
+{
+sessionStorage.removeItem("myFriends1");
+sessionStorage.removeItem("myFriends2");
+sessionStorage.removeItem("myFriends3");
+sessionStorage.removeItem("myFriends4");
+sessionStorage.removeItem("myFriends5");
+var name1 = document.getElementById("myFriends1").value;
+var name2 = document.getElementById("myFriends2").value;
+var name3 = document.getElementById("myFriends3").value;
+var name4 = document.getElementById("myFriends4").value;
+var name5 = document.getElementById("myFriends5").value;
+sessionStorage.setItem("myFriends1", name1 ); 
+sessionStorage.setItem("myFriends2", name2 );
+sessionStorage.setItem("myFriends3", name3 );
+sessionStorage.setItem("myFriends4", name4 );
+sessionStorage.setItem("myFriends5", name5 );
+console.log(sessionStorage.getItem("myFriends1"));
+console.log(sessionStorage.getItem("myFriends2"));
+console.log(sessionStorage.getItem("myFriends3"));
+console.log(sessionStorage.getItem("myFriends4"));
+console.log(sessionStorage.getItem("myFriends5"));
+}
+</script>
+
+
+<div class="ui-grid-a">
+                <div class="ui-block-a">
+<a href="#step1" data-role="button" data-icon="arrow-l" data-transition="slideup" data-iconpos="left">Back</a>
+</div>
+                <div class="ui-block-b">
+<a href="#step3" onClick="friends();" class="save_friends" data-role="button" data-icon="arrow-r" data-transition="slidedown" data-iconpos="right">Next</a>
+</div>
+          </div>
+</div>
+</section>
+
+<section id="step3" data-role="page">
+<div class="ui-content">
+<div class="ui-grid-a" style="text-align:center;">
+<div id="progressBar3"><div></div></div></div>
+<br>
+ <div data-role="navbar">
+<nav>
+ <div class="ui-grid-a">
+            <ul>
+                            <div class="ui-block-a">
+                <li><a href="" class="ui-btn-active nav-bordera">Day 1</a></li>
+                                </div>
+                                <div class="ui-block-b">
+                <li><a href="">Day 2</a></li>
+                                </div>
+                                <div class="ui-block-c">
+                <li><a href="">Day 3</a></li>
+                                </div>
+                                <div class="ui-block-d">
+                <li><a href="">Day 4</a></li>
+                                </div>
+                                <div class="ui-block-e">
+                                <li><a href="" class="nav-borderb">Day 5</a></l$
+                                </div>
+
+            </ul>
+                        </div>
+          </nav>
+</div>
+<h3>List activities that you would like to be involved in.</h3>
+<div class="input_fields_wrapper">
+<!--    <button class="add_activities">Add Your Activities</button> -->
+<!--  <div><input type="text" name="myActivities1" placeholder="Activity"></div> -->
+<div class="ui-grid-a"><input class="ui-input-text ui-corner-all ui-shadow-inset" type="text" id="myActivities1" placeholder="Activity"></div> 
+<div class="ui-grid-a"><input class="ui-input-text ui-corner-all ui-shadow-inset" type="text" id="myActivities2" placeholder="Activity"></div> 
+<div class="ui-grid-a"><input class="ui-input-text ui-corner-all ui-shadow-inset" type="text" id="myActivities3" placeholder="Activity"></div> 
+<div class="ui-grid-a"><input class="ui-input-text ui-corner-all ui-shadow-inset" type="text" id="myActivities4" placeholder="Activity"></div> 
+<div class="ui-grid-a"><input class="ui-input-text ui-corner-all ui-shadow-inset" type="text" id="myActivities5" placeholder="Activity"></div> 
+
+</div>
+
+<script>
+//document.write(sessionStorage.getItem("myFriends1"));
+//document.write(sessionStorage.getItem("myFriends2"));
+//document.write(sessionStorage.myFriends1);
+//document.write(sessionStorage.myFriends2);
+//document.write(sessionStorage.myFriends3);
+//document.write(sessionStorage.myFriends4);
+//document.write(sessionStorage.myFriends5);
+
+</script>
+<script>
+function activities()
+{
+sessionStorage.removeItem("myActivities1");
+sessionStorage.removeItem("myActivities2");
+sessionStorage.removeItem("myActivities3");
+sessionStorage.removeItem("myActivities4");
+sessionStorage.removeItem("myActivities5");
+var act1 = document.getElementById("myActivities1").value;
+var act2 = document.getElementById("myActivities2").value;
+var act3 = document.getElementById("myActivities3").value;
+var act4 = document.getElementById("myActivities4").value;
+var act5 = document.getElementById("myActivities5").value;
+sessionStorage.setItem("myActivities1", act1 );
+sessionStorage.setItem("myActivities2", act2 );
+sessionStorage.setItem("myActivities3", act3 );
+sessionStorage.setItem("myActivities4", act4 );
+sessionStorage.setItem("myActivities5", act5 );
+console.log(sessionStorage.getItem("myActivities1"));
+console.log(sessionStorage.getItem("myActivities2"));
+console.log(sessionStorage.getItem("myActivities3"));
+console.log(sessionStorage.getItem("myActivities4"));
+console.log(sessionStorage.getItem("myActivities5"));
+}
+</script>
+
+
+<div class="ui-grid-a">
+               <div class="ui-block-a">
+<a href="#step2" data-role="button" data-icon="arrow-l" data-transition="slideup" data-iconpos="left">Back</a>
+</div>
+                <div class="ui-block-b">
+<a href="#step4" onClick="activities();" data-role="button" data-icon="arrow-r" data-transition="slidedown" data-iconpos="right">Next</a> 
+</div>
+            </div>
+</div>
+</section>
+
+
+<section id="step4" data-role="page">
+<div class="ui-content">
+<div class="ui-grid-a" style="text-align:center;">
+<div id="progressBar4"><div></div></div></div>
+<br>
+ <div data-role="navbar">
+<nav>
+ <div class="ui-grid-a">
+            <ul>
+                            <div class="ui-block-a">
+                <li><a href="" class="ui-btn-active nav-bordera">Day 1</a></li>
+                                </div>
+                                <div class="ui-block-b">
+                <li><a href="">Day 2</a></li>
+                                </div>
+                                <div class="ui-block-c">
+                <li><a href="">Day 3</a></li>
+                                </div>
+                                <div class="ui-block-d">
+                <li><a href="">Day 4</a></li>
+                                </div>
+                                <div class="ui-block-e">
+                                <li><a href="" class="nav-borderb">Day 5</a></l$
+                                </div>
+
+            </ul>
+                        </div>
+          </nav>
+</div>
+<h3>Connect activities with your friends</h3>
+<div>
+<div class="ui-grid-a">
+
+<script>document.write("<div >"+sessionStorage.myFriends1+"</div>");</script>
+
+<div style="float:right">
+<select id="mySelect1" onChange="mySelect1();"> <!--  onchange="sessionStorage.setItem("mySelect1",this.value)"> -->
+<script>
+var myOptions = {
+    v1 : sessionStorage.getItem("myActivities1"),
+    v2 : sessionStorage.getItem("myActivities2"),
+    v3 : sessionStorage.getItem("myActivities3"),
+    v4 : sessionStorage.getItem("myActivities4"),
+    v5 : sessionStorage.getItem("myActivities5")
+}; 
+var mySelect1 = $('#mySelect1');
+$.each(myOptions, function(val, text) {
+    mySelect1.append(
+        $('<option></option>').val(val).html(text)
+    );
+});
+</script>
+</select>  
+</div>
+</div>
+<script>
+function mySelect1(){
+var a = document.getElementById("mySelect1");
+//var b = a.options[a.selectedIndex].text;
+sessionStorage.setItem("mySelect1", a.options[a.selectedIndex].text);
+console.log(sessionStorage.getItem("mySelect1"));
+//console.log(a.options[a.selectedIndex].text);
+//alert(a.options[a.selectedIndex].text);
+}
+</script>
+
+
+
+<div class="ui-grid-a">
+<div>
+<script>document.write(sessionStorage.myFriends2);</script>
+</div>
+<div style="float:right">
+<select id="mySelect2" onChange="mySelect2();">
+<script>
+var myOptions = {
+    val1 : sessionStorage.getItem("myActivities1"),
+    val2 : sessionStorage.getItem("myActivities2"),
+    val3 : sessionStorage.getItem("myActivities3"),
+    val4 : sessionStorage.getItem("myActivities4"),
+    val5 : sessionStorage.getItem("myActivities5")
+};
+var mySelect2 = $('#mySelect2');
+$.each(myOptions, function(val, text) {
+    mySelect2.append(
+        $('<option></option>').val(val).html(text)
+    );
+});
+</script>
+</select>  
+</div>
+</div>
+<script>
+function mySelect2(){
+var a = document.getElementById("mySelect2");
+sessionStorage.setItem("mySelect2", a.options[a.selectedIndex].text);
+console.log(sessionStorage.getItem("mySelect2"));
+//console.log(a.options[a.selectedIndex].text);
+//alert(a.options[a.selectedIndex].text);
+}
+</script>
+
+<div class="ui-grid-a">
+<div>
+<script>document.write(sessionStorage.myFriends3);</script>
+</div>
+<div style="float:right">
+<select id="mySelect3" onChange="mySelect3();">
+<script>
+var myOptions = {
+    val1 : sessionStorage.getItem("myActivities1"),
+    val2 : sessionStorage.getItem("myActivities2"),
+    val3 : sessionStorage.getItem("myActivities3"),
+    val4 : sessionStorage.getItem("myActivities4"),
+    val5 : sessionStorage.getItem("myActivities5")
+};
+var mySelect3 = $('#mySelect3');
+$.each(myOptions, function(val, text) {
+    mySelect3.append(
+        $('<option></option>').val(val).html(text)
+    );
+});
+</script>
+</select>  
+</div>
+</div>
+<script>
+function mySelect3(){
+var a = document.getElementById("mySelect3");
+sessionStorage.setItem("mySelect3", a.options[a.selectedIndex].text);
+console.log(sessionStorage.getItem("mySelect3"));
+//console.log(a.options[a.selectedIndex].text);
+//alert(a.options[a.selectedIndex].text);
+}
+</script>
+
+<div class="ui-grid-a">
+<div>
+<script>document.write(sessionStorage.myFriends4);</script>
+</div>
+<div style="float:right">
+
+<select id="mySelect4" onChange="mySelect4();">
+<script>
+var myOptions = {
+    val1 : sessionStorage.getItem("myActivities1"),
+    val2 : sessionStorage.getItem("myActivities2"),
+    val3 : sessionStorage.getItem("myActivities3"),
+    val4 : sessionStorage.getItem("myActivities4"),
+    val5 : sessionStorage.getItem("myActivities5")
+};
+var mySelect4 = $('#mySelect4');
+$.each(myOptions, function(val, text) {
+    mySelect4.append(
+        $('<option></option>').val(val).html(text)
+    );
+});
+</script>
+</select>  
+</div></div>
+<script>
+function mySelect4(){
+var a = document.getElementById("mySelect4");
+sessionStorage.setItem("mySelect4", a.options[a.selectedIndex].text);
+console.log(sessionStorage.getItem("mySelect4"));
+//console.log(a.options[a.selectedIndex].text);
+//alert(a.options[a.selectedIndex].text);
+}
+</script>
+
+<div class="ui-grid-a">
+<div>
+<script>document.write(sessionStorage.myFriends5);</script>
+</div>
+<div style="float:right">
+
+<select id="mySelect5" onChange="mySelect5();">
+<script>
+var myOptions = {
+    val1 : sessionStorage.getItem("myActivities1"),
+    val2 : sessionStorage.getItem("myActivities2"),
+    val3 : sessionStorage.getItem("myActivities3"),
+    val4 : sessionStorage.getItem("myActivities4"),
+    val5 : sessionStorage.getItem("myActivities5")
+};
+var mySelect5 = $('#mySelect5');
+$.each(myOptions, function(val, text) {
+    mySelect5.append(
+        $('<option></option>').val(val).html(text)
+    );
+});
+</script>
+</select>  
+</div></div>
+<script>
+function mySelect5(){
+var a = document.getElementById("mySelect5");
+sessionStorage.setItem("mySelect5", a.options[a.selectedIndex].text);
+console.log(sessionStorage.getItem("mySelect5"));
+//console.log(a.options[a.selectedIndex].text);
+//alert(a.options[a.selectedIndex].text);
+}
+</script>
+
+</div>
+
+<div class="ui-grid-a">
+               <div class="ui-block-a">
+<a href="#step3" data-role="button" data-icon="arrow-l" data-transition="slideup" data-iconpos="left">Back</a>
+</div>
+                <div class="ui-block-b">
+ <a href="#step5" data-role="button" data-icon="arrow-r" data-transition="slidedown" data-iconpos="right">Next</a> 
+</div>
+            </div>
+</div>
+</section>
+
+
+<section id="step5" data-role="page">
+<div class="ui-content">
+<div class="ui-grid-a" style="text-align:center;">
+<div id="progressBar5"><div></div></div></div>
+<br>
+ <div data-role="navbar">
+<nav>
+ <div class="ui-grid-a">
+            <ul>
+                            <div class="ui-block-a">
+                <li><a href="" class="ui-btn-active nav-bordera">Day 1</a></li>
+                                </div>
+                                <div class="ui-block-b">
+                <li><a href="">Day 2</a></li>
+                                </div>
+                                <div class="ui-block-c">
+                <li><a href="">Day 3</a></li>
+                                </div>
+                                <div class="ui-block-d">
+                <li><a href="">Day 4</a></li>
+                                </div>
+                                <div class="ui-block-e">
+                                <li><a href="" class="nav-borderb">Day 5</a></l$
+                                </div>
+
+            </ul>
+                        </div>
+          </nav>
+</div>
+<h3>Your chosen activities with your friends</h3>
+<div>
+<div class="ui-grid-a">
+<script>document.write("<div >"+sessionStorage.myFriends1+"</div>");</script>
+<script>document.write("<div >"+sessionStorage.mySelect1+"</div>");</script>
+<script>document.write("<div >"+sessionStorage.myFriends2+"</div>");</script>
+<script>document.write("<div >"+sessionStorage.mySelect2+"</div>");</script>
+<script>document.write("<div >"+sessionStorage.myFriends3+"</div>");</script>
+<script>document.write("<div >"+sessionStorage.mySelect3+"</div>");</script>
+<script>document.write("<div >"+sessionStorage.myFriends4+"</div>");</script>
+<script>document.write("<div >"+sessionStorage.mySelect4+"</div>");</script>
+<script>document.write("<div >"+sessionStorage.myFriends5+"</div>");</script>
+<script>document.write("<div >"+sessionStorage.mySelect5+"</div>");</script>
+</div>
+<div class="ui-grid-a">
+               <div class="ui-block-a">
+<a href="#step4" data-role="button" data-icon="arrow-l" data-transition="slideup" data-iconpos="left">Back</a>
+</div>
+                <div class="ui-block-b">
+ <a href="#step6" data-role="button" data-icon="arrow-r" data-transition="slidedown" data-iconpos="right">Next</a>
+</div>
+            </div>
+</div>
+</section>
+
+
+<div style="background-color:#FFFFFF;" data-role="footer" data-position="fixed">
+  <nav data-role="navbar">
+            <ul>
+                <li><a href="index.html" class="ui-btn ui-icon-home ui-btn-icon-top ui-btn-active ui-state-persist">HOME</a></li>
+                <li><a href="pastActivities.html" class="ui-btn ui-icon-search ui-btn-icon-top">VIEW PAST ACTIVITIES</a></li>
+                <li><a href="" class="ui-btn ui-icon-lock ui-btn-icon-top">LOG OUT</a></li>
+            </ul>
+          </nav>
+</div>
+
+</body>
+</html>

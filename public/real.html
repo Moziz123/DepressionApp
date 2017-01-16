@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>navbar</title>
+<meta charset="UTF-8"/>
+<link rel="stylesheet" href="css/navigation.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="js/navigation.js"></script>
+<style>
+.con {
+    width:100%;
+    height: 350px;
+    position:relative !important;
+    
+}
+.con img {
+   height:inherit;
+   width:100%;
+   min-width: 100px;
+ 
+
+}
+
+.container{
+  
+  
+  top: 450px;
+  position: absolute; 
+  
+  margin: 0 10% 0 5%;
+  width: 85%; 
+ 
+}
+
+.inner-container{
+  width:100%;
+  height:75px;
+  position:relative;
+  border-radius: 20px;
+  overflow:hidden;
+
+}
+
+.box{
+  position:relative;
+  height:100%;
+  width:100%;
+  
+  background-color:hsla(216, 100%, 50%, .4);
+  padding: 5px 20px 20px;
+   
+}
+
+
+.box input{
+  display:block;
+  width:50%;
+  margin-right: 5%;
+  padding:15px 0 0 0;
+  background:rgba(0,0,0,0.2);
+  color:#ffffff;
+  font-weight: bold;
+  border-radius:10px;
+  border:0;
+  float: left;
+
+}
+.box input:focus,.box input:active,.box button:focus,.box button:active{
+  outline:none;
+}
+.box button{
+  background:rgba(0,0,0,0.2);
+  border:0;
+  color:#e6e6e6;
+  padding:10px;
+  font-size:10px;
+  width:40%;
+  margin:20px;
+   
+
+   padding-left:5%;
+
+
+
+  display:block;
+  border-radius:20px;
+
+}
+.box button:active{
+  background:#27ae60;
+}
+
+
+
+#icon{
+background-image:url(images/search.png); 
+background-repeat: no-repeat; 
+background-position: 5px 12px;
+}
+
+#map{
+background-image:url(images/map.png); 
+background-repeat: no-repeat; 
+background-position: 100px 0;
+}
+
+
+
+</style>
+</head>
+<body id="navPush">
+<div id="mySidenav" class="sidenav">
+<ul>
+  <li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a></li>
+  <li><a href="#">Edit profile</a></li>
+  <li><a href="#">Contact us</a></li>
+  <li><a href="#">Log out</a></li>  
+</ul>
+</div>
+
+<nav id="navigation">
+  <ul>
+    <li><a class="active" href="#"><div class="footerText"><img id="icons1" src="images/ride1.png"><span class="caption">Request ride</span></div></a></li>
+    <li><a class="" href="#"><div class="footerText"><img id="icons2" src="images/offer.png"><span class="caption">Current offers</span></div></a></li>
+    <li><a class="" href="#"><div class="footerText"><img id="icons3" src="images/chat.png"><span class="caption">Chats</span></div></a></li>
+    <li><a class="" id="menu" href="#"><div id="menuBar"><img id="icons4" src="images/menu.png"></div></a></li>    
+  </ul>
+</nav>
+
+<div class="con">
+<img src="images/carmoving.gif">
+</div>
+
+
+<div class="container">  
+  <div class="inner-container">    
+    <div class="box"> 
+        
+      
+        <form>
+	  <input id="icon" style="text-indent:40px; type="text" placeholder="Destination..."/>
+          
+
+          <button id="map" >Map</button>
+        </form>     
+    </div>
+  </div>
+</div>
+
+
+
+
+</body>
+</html>

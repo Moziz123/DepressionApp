@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>WRAP</title>
+<meta charset="UTF-8"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<link rel="stylesheet" href="css/style.css"/>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"
+integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"
+integrity="sha256-DI6NdAhhFRnO2k51mumYeDShet3I8AKCQf/tf7ARNhI="
+crossorigin="anonymous"></script>
+  
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="js/script4.js"></script>
+
+
+<script>
+      $(function(){
+        $( "[data-role='header'], [data-role='footer']" ).toolbar();
+      }); 
+</script>
+<script>
+    function progress(percent, $element) {
+        var progressBarWidth = percent * $element.width() / 100;
+        $element.find('div').animate({ width: progressBarWidth }, 500).html(percent + "% ");
+    }
+</script>
+<script>
+$(document).on('pageinit', '#step1', function(){
+        progress(0, $('#progressBar'));});
+</script>
+
+<script>
+$(document).on('pageinit', '#step2', function(){
+        progress(25, $('#progressBar2'));
+        });
+</script>
+<script>
+$(document).on('pageinit', '#step3', function(){
+        progress(50, $('#progressBar3'));
+        });
+</script>
+<script>
+$(document).on('pageinit', '#step4', function(){
+        progress(75, $('#progressBar4'));
+        });
+</script>
+
+<script>
+$(document).on('pageinit', '#step5', function(){
+        progress(100, $('#progressBar5'));
+        });
+</script>
+
+
+
+<meta name="viewport" content="width=device-width" />
+<style>
+h3 {
+text-align:center;
+}
+    #progressBar, #progressBar2, #progressBar3, #progressBar4, #progressBar5 {
+        width: 400px;
+        height: 22px;
+        border: 1px solid #111;
+        background-color: #292929;
+border-top-left-radius:30px;
+border-bottom-left-radius:30px;
+border-top-right-radius:30px;
+border-bottom-right-radius:30px;
+    }
+    #progressBar div, #progressBar2 div, #progressBar3 div, #progressBar4 div, #progressBar5 div {
+        height: 100%;
+        color: #fff;
+        text-align: right;
+        line-height: 22px; /* same as #progressBar height if we want text middle aligned */
+        width: 0;
+        background-color: #0099ff;
+border-top-left-radius:30px;
+border-bottom-left-radius:30px;
+border-top-right-radius:30px;
+border-bottom-right-radius:30px;
+    }
+.nav-bordera {
+border-top-left-radius:30px;
+border-bottom-left-radius:30px;
+}
+
+.nav-borderb {
+border-top-right-radius:30px;
+border-bottom-right-radius:30px;
+}
+
+</style>  
+</head>
+
+<body>
+<div style="background-color:#FFFFFF;" data-role="header" data-position="fixed">
+<div>
+<h3 style="float:left">WRAP</h3>
+<h3 style="float:right">Level 2</h3>
+</div></div>
+
+<section id="step1" data-role="page">
+<div class="ui-content">
+
+<div class="ui-grid-a" style="text-align:center;">
+ <div data-role="navbar">
+<nav>
+ <div class="ui-grid-a">
+            <ul>
+
+                            <div class="ui-block-a">
+                <li><a href="" class="nav-bordera">Day 1</a></li>
+                                </div>
+                                <div class="ui-block-b">
+                <li><a href="">Day 2</a></li>
+                                </div>
+                                <div class="ui-block-c">
+                <li><a href="">Day 3</a></li>
+                                </div>
+                                <div class="ui-block-d">
+                <li><a href="">Day 4</a></li>
+                                </div>
+                                <div class="ui-block-e">
+                <li><a href="" class="nav-borderb">Day 5</a></li>
+                                </div>
+
+            </ul>
+                        </div>
+          </nav>
+</div>
+
+<div style="text-align:center;">
+<h3>Introduction to Level 2</h3>
+<div class="ui-grid-a" style="text-align:center;">
+<div class="ui-block-a">
+<iframe src="https://www.youtube.com/embed/JRMOMjCoR58" frameborder="0" allowfullscreen></iframe>
+</div></div>
+<div class="ui-grid-a" style="text-align:center;">
+<div class="ui-block-a">
+<div style="min-width:300px">
+What is Lorem Ipsum?
+Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+It has survived not only five centuries, but also the leap into electronic typesetting,
+remaining essentially unchanged. It was popularised in the 1960s with the release of
+Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+</div>
+</div></div>
+<a href="#step2" data-role="button" data-icon="arrow-r" id="lvl2Next" data-iconpos="right">Next</a>
+</div>
+</div>
+</section>
+
+<section id="step2" data-role="page">
+<div class="ui-content">
+
+<form action="" method="post">
+<div class="ui-grid-a" style="text-align:center;">
+<div id="progressBar2"><div></div></div></div>
+<br>
+ <div data-role="navbar">
+<nav>
+ <div class="ui-grid-a">
+            <ul>
+
+                            <div class="ui-block-a">
+                <li><a href="" class="nav-bordera">Day 1</a></li>
+                                </div>
+                                <div class="ui-block-b">
+                <li><a href="">Day 2</a></li>
+                                </div>
+                                <div class="ui-block-c">
+                <li><a href="">Day 3</a></li>
+                                </div>
+                                <div class="ui-block-d">
+                <li><a href="">Day 4</a></li>
+                                </div>
+                                <div class="ui-block-e">
+                <li><a href="" class="nav-borderb">Day 5</a></li>
+                                </div>
+
+            </ul>
+                        </div>
+          </nav>
+</div>
+
+<h3>Wite down an upcoming stressful event.</h3>
+<span class="error_form" id="ans1_error"></span>
+
+<label for="ans1"></label>
+<textarea name="ans1" id="lvl2ans1"></textarea>
+<div class="ui-grid-a">
+                <div class="ui-block-a">
+<a href="#step1" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a>
+</div>
+                <div class="ui-block-b">
+<a href="#step3" id="ans1btn" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="step3" data-role="page">
+<div class="ui-content">
+<div class="ui-grid-a" style="text-align:center;">
+<div id="progressBar3"><div></div></div></div>
+<br>
+ <div data-role="navbar">
+<nav>
+ <div class="ui-grid-a">
+            <ul>
+
+                            <div class="ui-block-a">
+                <li><a href="" class="nav-bordera">Day 1</a></li>
+                                </div>
+                                <div class="ui-block-b">
+                <li><a href="">Day 2</a></li>
+                                </div>
+                                <div class="ui-block-c">
+                <li><a href="">Day 3</a></li>
+                                </div>
+                                <div class="ui-block-d">
+                <li><a href="">Day 4</a></li>
+                                </div>
+                                <div class="ui-block-e">
+                <li><a href="" class="nav-borderb">Day 5</a></li>
+                                </div>
+
+            </ul>
+                        </div>
+          </nav>
+</div>
+
+<h3>Select coping technique.</h3>
+<span class="error_form" id="ans2_error"></span>
+
+<div class="ui-field-contain">
+  <fieldset data-role="controlgroup">
+    <legend>Problem focused</legend>
+      <input type="checkbox" value="MakePlans" id="MakePlans" class="custom">
+      <label for="MakePlans">Make plans</label>
+ 
+      <input type="checkbox" value="SeekOutInformation" id="SeekOutInformation" class="custom">
+      <label for="SeekOutInformation">Seek out information</label>
+ 
+      <input type="checkbox" value="BalancedPerspective" id="BalancedPerspective" class="custom">
+      <label for="BalancedPerspective">Balanced perspective</label>
+ 
+      <input type="checkbox" value="ApproachTheStessor" id="ApproachTheStessor" class="custom">
+      <label for="ApproachTheStessor">Approach the stessor</label>
+	  
+	  <input type="checkbox" value="SeekSocialSupport" id="SeekSocialSupport" class="custom">
+      <label for="SeekSocialSupport">Seek social support</label>
+ 
+      <input type="checkbox" value="SupressCompetingActivities" id="SupressCompetingActivities" class="custom">
+      <label for="SupressCompetingActivities">Supress competing activities</label>
+    </fieldset>
+</div>
+
+<div class="ui-grid-a">
+                <div class="ui-block-a">
+<a href="#step2" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a>
+</div>
+                <div class="ui-block-b">
+
+<a href="#step4" id="ans2btn" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a> 
+
+</div>
+            </div>
+</div>
+</section>
+
+<section id="step4" data-role="page">
+<div class="ui-content">
+<div class="ui-grid-a" style="text-align:center;">
+<div id="progressBar4"><div></div></div></div>
+<br>
+ <div data-role="navbar">
+<nav>
+ <div class="ui-grid-a">
+            <ul>
+
+                            <div class="ui-block-a">
+                <li><a href="" class="nav-bordera">Day 1</a></li>
+                                </div>
+                                <div class="ui-block-b">
+                <li><a href="">Day 2</a></li>
+                                </div>
+                                <div class="ui-block-c">
+                <li><a href="">Day 3</a></li>
+                                </div>
+                                <div class="ui-block-d">
+                <li><a href="">Day 4</a></li>
+                                </div>
+                                <div class="ui-block-e">
+                <li><a href="" class="nav-borderb">Day 5</a></li>
+                                </div>
+
+            </ul>
+                        </div>
+          </nav>
+</div>
+
+<h3>Select coping technique.</h3>
+<span class="error_form" id="ans3_error"></span>
+
+<div class="ui-field-contain">
+  <fieldset data-role="controlgroup">
+    <legend>Emotion focused (Adaptive)</legend>
+      <input type="checkbox" value="SeekSupport" id="SeekSupport" class="custom">
+      <label for="SeekSupport">Seek support</label>
+ 
+      <input type="checkbox" value="PositiveReinterpretation" id="PositiveReinterpretation" class="custom">
+      <label for="PositiveReinterpretation">Positive reinterpretation</label>
+ 
+      <input type="checkbox" value="Acceptance" id="Acceptance" class="custom">
+      <label for="Acceptance">Acceptance</label>
+ 
+      <input type="checkbox" value="Religion" id="Religion" class="custom">
+      <label for="Religion">Religion</label>
+	  
+	  <input type="checkbox" value="Humor" id="Humor" class="custom">
+      <label for="Humor">Humor</label>
+ 
+      <input type="checkbox" value="Meditation" id="Meditation" class="custom">
+      <label for="Meditation">Meditation</label>
+      
+      <input type="checkbox" value="Relaxation" id="Relaxation" class="custom">
+      <label for="Relaxation">Relaxation</label>
+
+      <input type="checkbox" value="Exercise" id="Exercise" class="custom">
+      <label for="Exercise">Exercise</label>
+    </fieldset>
+</div>
+
+<div class="ui-grid-a">
+                <div class="ui-block-a">
+<a href="#step3" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a>
+</div>
+                <div class="ui-block-b">
+
+<a href="#step5" id="ans3btn" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a> 
+
+</div>
+            </div>
+</div>
+</section>
+
+<section id="step5" data-role="page">
+<div class="ui-content">
+<div class="ui-grid-a" style="text-align:center;">
+<div id="progressBar5"><div></div></div></div>
+<br>
+ <div data-role="navbar">
+<nav>
+ <div class="ui-grid-a">
+            <ul>
+
+                            <div class="ui-block-a">
+                <li><a href="" class="nav-bordera">Day 1</a></li>
+                                </div>
+                                <div class="ui-block-b">
+                <li><a href="">Day 2</a></li>
+                                </div>
+                                <div class="ui-block-c">
+                <li><a href="">Day 3</a></li>
+                                </div>
+                                <div class="ui-block-d">
+                <li><a href="">Day 4</a></li>
+                                </div>
+                                <div class="ui-block-e">
+                <li><a href="" class="nav-borderb">Day 5</a></li>
+                                </div>
+
+            </ul>
+                        </div>
+          </nav>
+</div>
+
+<h3>Select coping technique.</h3>
+
+<span class="error_form" id="ans4_error"></span>
+
+<div class="ui-field-contain">
+  <fieldset data-role="controlgroup">
+    <legend>Emotion focused (Maladaptive)</legend>
+      <input type="checkbox" value="DenyEventHasHappened" id="DenyEventHasHappened" class="custom">
+      <label for="DenyEventHasHappened">Deny event has happened</label>
+ 
+      <input type="checkbox" value="DisengageMentally" id="DisengageMentally" class="custom">
+      <label for="DisengageMentally">Disengage mentally</label>
+ 
+      <input type="checkbox" value="BehaviorallyDisengage" id="BehaviorallyDisengage" class="custom">
+      <label for="BehaviorallyDisengage">Behaviorally disengage</label>
+ 
+      <input type="checkbox" value="FocusOnVentingOfEmotions" id="FocusOnVentingOfEmotions" class="custom">
+      <label for="FocusOnVentingOfEmotions">Focus on venting of emotions</label>
+	  
+	  <input type="checkbox" value="SubstanceUse" id="SubstanceUse" class="custom">
+      <label for="SubstanceUse">Substance use (food, drugs, alcohol)</label>
+    </fieldset>
+</div>
+
+<div class="ui-grid-a">
+                <div class="ui-block-a">
+<a href="#step4" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a>
+</div>
+                <div class="ui-block-b">
+
+<a href="http://depressionapp1.westeurope.cloudapp.azure.com/welcome.html" rel="external" id="ans4btn" data-role="button" data-icon="arrow-r" data-iconpos="right">Submit</a>
+</div>
+            </div>
+</div>
+</section>
+
+
+<div style="background-color:#FFFFFF;" data-role="footer" data-position="fixed">
+  <nav data-role="navbar">
+            <ul>
+                <li><a href="index.html" class="ui-btn ui-icon-home ui-btn-icon-top ui-btn-active ui-state-persist">HOME</a></li>
+                <li><a href="pastActivities.html" class="ui-btn ui-icon-search ui-btn-icon-top">VIEW PAST ACTIVITIES</a></li>
+                <li><a href="" class="ui-btn ui-icon-lock ui-btn-icon-top">LOG OUT</a></li>
+            </ul>
+          </nav>
+</div>
+
+</body>
+</html>

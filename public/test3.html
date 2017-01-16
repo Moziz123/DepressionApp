@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>WRAP</title>
+
+
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"
+integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"
+integrity="sha256-DI6NdAhhFRnO2k51mumYeDShet3I8AKCQf/tf7ARNhI="
+crossorigin="anonymous"></script>
+  
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+<script>
+      $(function(){
+        $( "[data-role='header'], [data-role='footer']" ).toolbar();
+      }); 
+</script>
+<script>
+$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrap         = $(".input_fields_wrap"); //Fields wrapper
+    var add_button      = $(".add_field_button"); //Add button ID
+	
+	var wrapper         = $(".input_fields_wrapper"); //Fields wrapper
+    var add_activities      = $(".add_activities"); //Add button ID
+	
+	var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+           // $(wrap).append('<div><input type="text" name="myFriends[]"><a href="#" class="remove_field" data-role="button">Remove</a></div>'); //add input box
+            $(wrap).append('<div class="ui-grid-a"><input class="ui-input-text ui-corner-all ui-shadow-inset" type="text" name="myActivities[]" placeholder="Friend"><a href="#" style="float:right" class="remove_field ui-btn ui-corner-all ui-shadow">Delete</a></div>'); //add input box 
+
+        }
+    });
+	
+	var y = 1; //initlal text box count
+    $(add_activities).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(y < max_fields){ //max input box allowed
+            y++; //text box increment
+           // $(wrapper).append('<div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="text" name="myActivities[]"><a href="#" class="remove_field2" data-role="button">Remove</a></div>'); //add input box 
+           // $(wrapper).append('<div data-inline="true"><input class="ui-input-text ui-corner-all ui-shadow-inset" type="text" name="myActivities[]"><a href="#" style="float:right" class="remove_field2 ui-btn">Delete</a></div>'); //add input box 
+           // $(wrapper).append('<div class="ui-grid-a"><input style="width:60%" class="ui-input-text ui-corner-all ui-shadow-inset" type="text" name="myActivities[]"><a href="#" style="float:right" class="remove_field2 ui-btn ui-corner-all ui-shadow">Delete</a></div>'); //add input box 
+// this is working don't touch  $(wrapper).append('<div class="ui-grid-a"><input class="ui-input-text ui-corner-all ui-shadow-inset" type="text" name="myActivities[]" placeholder="Activity"><a href="#" style="float:right" class="remove_field2 ui-btn ui-corner-all ui-shadow">Delete</a></div>'); //add input box 
+            $(wrapper).append('<div class="ui-grid-a"><input class="ui-input-text ui-corner-all ui-shadow-inset" type="text" name="myActivities[]"+$y placeholder="Activity"><a href="#" style="float:right" class="remove_field2 ui-btn ui-corner-all ui-shadow">Delete</a></div>'); //add input box 
+        }
+    });
+    
+       
+    $(wrap).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+
+    $(wrapper).on("click",".remove_field2", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); y--;
+    })
+
+});
+</script>
+<script>
+    function progress(percent, $element) {
+        var progressBarWidth = percent * $element.width() / 100;
+        $element.find('div').animate({ width: progressBarWidth }, 500).html(percent + "% ");
+    }
+</script>
+<script>
+$(document).on('pageinit', '#step1', function(){
+        progress(0, $('#progressBar'));});
+</script>
+
+<script>
+$(document).on('pageinit', '#step2', function(){
+        progress(25, $('#progressBar2'));
+        });
+</script>
+<script>
+$(document).on('pageinit', '#step3', function(){
+        progress(50, $('#progressBar3'));
+        });
+</script>
+<script>
+$(document).on('pageinit', '#step4', function(){
+        progress(75, $('#progressBar4'));
+        });
+</script> 
+
+
+<meta name="viewport" content="width=device-width" />
+<style>
+h3 {
+text-align:center;
+}
+.ui-input-text { height: 40px !important }
+.nav-bordera {
+border-top-left-radius:30px;
+border-bottom-left-radius:30px;
+}
+
+.nav-borderb {
+border-top-right-radius:30px;
+border-bottom-right-radius:30px;
+}
+    #progressBar, #progressBar2, #progressBar3, #progressBar4, #progressBar5 {
+        width: 400px;
+        height: 22px;
+        border: 1px solid #111;
+        background-color: #292929;
+border-top-left-radius:30px;
+border-bottom-left-radius:30px;
+border-top-right-radius:30px;
+border-bottom-right-radius:30px;
+    }
+    #progressBar div, #progressBar2 div, #progressBar3 div, #progressBar4 div, #progressBar5 div {
+        height: 100%;
+        color: #fff;
+        text-align: right;
+        line-height: 22px; /* same as #progressBar height if we want text middle aligned */
+        width: 0;
+        background-color: #0099ff;
+border-top-left-radius:30px;
+border-bottom-left-radius:30px;
+border-top-right-radius:30px;
+border-bottom-right-radius:30px;
+    }
+
+</style>  
+</head>
+
+<body>
+<div style="background-color:#FFFFFF;" data-role="header" data-position="fixed">
+<div>
+<h3 style="float:left">WRAP</h3>
+<h3 style="float:right">Level 3</h3>
+</div>
+</div>
+<section id="step1" data-role="page">
+<div class="ui-content">
+<div class="ui-grid-a" style="text-align:center;">
+
+ <div data-role="navbar">
+<nav>
+ <div class="ui-grid-a">
+            <ul>
+
+                            <div class="ui-block-a">
+                <li><a href="" class="ui-btn-active nav-bordera">Day 1</a></li>
+                                </div>
+                                <div class="ui-block-b">
+                <li><a href="">Day 2</a></li>
+                                </div>
+                                <div class="ui-block-c">
+                <li><a href="">Day 3</a></li>
+                                </div>
+                                <div class="ui-block-d">
+                <li><a href="">Day 4</a></li>
+                                </div>
+                                <div class="ui-block-e">
+                                <li><a href="" class="nav-borderb">Day 5</a></l$
+                                </div>
+
+            </ul>
+                        </div>
+          </nav>
+</div>
+
+<div style="text-align:center;">
+<h3>Introduction to Level 3</h3>
+<div class="ui-grid-a" style="text-align:center;">
+<div class="ui-block-a">
+<iframe src="https://www.youtube.com/embed/JRMOMjCoR58" frameborder="0" allowfullscreen></iframe>
+</div></div>
+<div class="ui-grid-a" style="text-align:center;">
+<div class="ui-block-a">
+<div style="min-width:300px">
+What is Lorem Ipsum?
+Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+It has survived not only five centuries, but also the leap into electronic typesetting,
+remaining essentially unchanged. It was popularised in the 1960s with the release of
+Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+</div>
+</div></div>
+<a href="#step2" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>
+</div></div>
+</div>
+</section>
+
+<section id="step2" data-role="page">
+<div class="ui-content">
+<div class="ui-grid-a" style="text-align:center;">
+<div id="progressBar2"><div></div></div></div>
+<br>
+
+<form action="" method="post">
+ <div data-role="navbar">
+<nav>
+ <div class="ui-grid-a">
+            <ul>
+
+                            <div class="ui-block-a">
+                <li><a href="" class="ui-btn-active nav-bordera">Day 1</a></li>
+                                </div>
+                                <div class="ui-block-b">
+                <li><a href="">Day 2</a></li>
+                                </div>
+                                <div class="ui-block-c">
+                <li><a href="">Day 3</a></li>
+                                </div>
+                                <div class="ui-block-d">
+                <li><a href="">Day 4</a></li>
+                                </div>
+                                <div class="ui-block-e">
+                                <li><a href="" class="nav-borderb">Day 5</a></l$
+                                </div>
+
+            </ul>
+                        </div>
+          </nav>
+</div>
+
+<h3>List friends that you would like to spend time with.</h3>
+
+<div class="input_fields_wrap">
+    <button class="add_field_button">Add More Friends</button>
+    <div><input type="text" name="myFriends[]" placeholder="Friend"></div>
+</div>
+<div class="ui-grid-a">
+                <div class="ui-block-a">
+<a href="#step1" data-role="button" data-icon="arrow-l" data-transition="slideup" data-iconpos="left">Back</a>
+</div>
+                <div class="ui-block-b">
+<a href="#step3" data-role="button" data-icon="arrow-r" data-transition="slidedown" data-iconpos="right">Next</a>
+</div>
+          </div>
+</div>
+</section>
+
+<section id="step3" data-role="page">
+<div class="ui-content">
+<div class="ui-grid-a" style="text-align:center;">
+<div id="progressBar3"><div></div></div></div>
+<br>
+ <div data-role="navbar">
+<nav>
+ <div class="ui-grid-a">
+            <ul>
+                            <div class="ui-block-a">
+                <li><a href="" class="ui-btn-active nav-bordera">Day 1</a></li>
+                                </div>
+                                <div class="ui-block-b">
+                <li><a href="">Day 2</a></li>
+                                </div>
+                                <div class="ui-block-c">
+                <li><a href="">Day 3</a></li>
+                                </div>
+                                <div class="ui-block-d">
+                <li><a href="">Day 4</a></li>
+                                </div>
+                                <div class="ui-block-e">
+                                <li><a href="" class="nav-borderb">Day 5</a></l$
+                                </div>
+
+            </ul>
+                        </div>
+          </nav>
+</div>
+<h3>List activities that you would like to be involved in.</h3>
+<div class="input_fields_wrapper">
+    <button class="add_activities">Add More Activities</button>
+    <div><input type="text" name="myActivities[]" placeholder="Activity"></div>
+</div>
+<div class="ui-grid-a">
+               <div class="ui-block-a">
+<a href="#step2" data-role="button" data-icon="arrow-l" data-transition="slideup" data-iconpos="left">Back</a>
+</div>
+                <div class="ui-block-b">
+ <a href="#step4" data-role="button" data-icon="arrow-r" data-transition="slidedown" data-iconpos="right">Next</a> 
+</div>
+            </div>
+</div>
+</section>
+
+
+<section id="step4" data-role="page">
+<div class="ui-content">
+<div class="ui-grid-a" style="text-align:center;">
+<div id="progressBar4"><div></div></div></div>
+<br>
+ <div data-role="navbar">
+<nav>
+ <div class="ui-grid-a">
+            <ul>
+                            <div class="ui-block-a">
+                <li><a href="" class="ui-btn-active nav-bordera">Day 1</a></li>
+                                </div>
+                                <div class="ui-block-b">
+                <li><a href="">Day 2</a></li>
+                                </div>
+                                <div class="ui-block-c">
+                <li><a href="">Day 3</a></li>
+                                </div>
+                                <div class="ui-block-d">
+                <li><a href="">Day 4</a></li>
+                                </div>
+                                <div class="ui-block-e">
+                                <li><a href="" class="nav-borderb">Day 5</a></l$
+                                </div>
+
+            </ul>
+                        </div>
+          </nav>
+</div>
+<h3>Connect activities with your friends</h3>
+<div>
+<!-- <script>
+var arr = [
+  {val : 1, text: 'One'},
+  {val : 2, text: 'Two'},
+  {val : 3, text: 'Three'}
+];
+
+var sel = $('<select>').appendTo('body');
+$(arr).each(function() {
+ sel.append($("<option>").attr('value',this.val).text(this.text));
+});
+</script>
+
+<script>
+var arr = [ "one", "two", "three", "four", "five" ];
+var obj = { one: 1, two: 2, three: 3, four: 4, five: 5 };
+
+jQuery.each( arr, function( i, val ) {
+  $( "#" + val ).text( "Mine is " + val + "." );
+
+  // Will stop running after "three"
+  return ( val !== "three" );
+});
+
+jQuery.each( obj, function( i, val ) {
+  $( "#" + i ).append( document.createTextNode( " - " + val ) );
+});
+</script> -->
+
+<select id="mySelect">
+<script>
+var myActivities[];
+var myOptions = {
+    val1 : 'text1',
+    val2 : 'text2'
+};
+var mySelect = $('#mySelect');
+$.each(myActivities, function(val, text) {
+    mySelect.append(
+        $('<option></option>').val(val).html(text)
+    );
+});
+</script>
+</select> 
+</div>
+
+<div class="ui-grid-a">
+               <div class="ui-block-a">
+<a href="#step3" data-role="button" data-icon="arrow-l" data-transition="slideup" data-iconpos="left">Back</a>
+</div>
+                <div class="ui-block-b">
+ <a href="#step5" data-role="button" data-icon="arrow-r" data-transition="slidedown" data-iconpos="right">Next</a> 
+</div>
+            </div>
+</div>
+</section>
+
+
+
+<div style="background-color:#FFFFFF;" data-role="footer" data-position="fixed">
+  <nav data-role="navbar">
+            <ul>
+                <li><a href="index.html" class="ui-btn ui-icon-home ui-btn-icon-top ui-btn-active ui-state-persist">HOME</a></li>
+                <li><a href="pastActivities.html" class="ui-btn ui-icon-search ui-btn-icon-top">VIEW PAST ACTIVITIES</a></li>
+                <li><a href="" class="ui-btn ui-icon-lock ui-btn-icon-top">LOG OUT</a></li>
+            </ul>
+          </nav>
+</div>
+
+</body>
+</html>

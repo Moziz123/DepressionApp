@@ -1,0 +1,164 @@
+<html>
+<head>
+    <title>MAWButton Demo</title>
+<meta charset="UTF-8"/>
+    
+    <link rel="stylesheet" href="css/mawbutton.css"/>
+	
+	<style>
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 40px;
+    color: #0C9AF2;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #002db3;
+}
+
+.closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 40px !important;
+    margin-left: 50px;
+    font-weight: bold;
+}
+#main {
+    transition: right-right .5s;
+    
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+nav {
+    width: 100%;  
+    border: 1px solid #ccc;
+    border-right: none;
+}
+
+nav.navigation{
+   position: fixed;
+   top: 0;
+}
+
+div.footerText{
+   vertical-align: top;
+   display: inline-block;
+   text-align: center;
+     
+}
+
+.caption{
+   display: block;
+}
+
+nav ul {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+	
+}
+
+
+nav ul li {
+    list-style: none;
+    float: left;
+    text-align: center;
+    border-left: 2px solid #0C9AF2;
+    border-right: 2px solid white;
+    width: 25%; /* fallback for non-calc() browsers */
+    width: calc(100% / 4);
+    box-sizing: border-box;
+	font-size: 20px;
+}
+
+nav ul li:first-child {
+    border-left: none;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 15px 0;
+	
+}
+h3.whitespace{
+   whitespace: nowrap;
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+   
+<nav id="navigation">
+  <ul>
+    <li><a href="#"><div class="footerText"><image src="images/search-icon.png"></image><span class="caption">Search rides</span></div></a></li>
+    <li><a href="#"><div class="footerText"><image src="images/ebma.png"></image><span class="caption">Ride offers</span></div></a></li>
+    <li><a href="#"><div class="footerText"><image src="images/chat.png"></image><span class="caption">Chats</span></div></a></li>
+    <li><div id="main"><a href="#" onclick="openNav()"><h3 id="whitespace"></h3><image src="images/menu.png"></image><span class="caption"></span></a></div></li>
+    
+  </ul>
+</nav>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">></a>
+  <a href="#">Edit profile</a>
+  <a href="#">Log out</a>
+  <a href="#">Contact us</a>
+  
+</div>
+	<script type="text/javascript" src="js/vendor/jquery.js"></script>
+	<script type="text/javascript" src="js/mawbutton.js"></script>
+    <script type="text/javascript">
+        $('a').mawbutton({
+            speed : 300,
+            scale : 6,
+            effect : "ripple",
+            transitionEnd:function(){
+                console.log('end');
+            }
+        });
+    </script>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginRight = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    
+}
+</script>
+</body>
+</html>

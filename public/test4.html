@@ -1,0 +1,115 @@
+<html>
+<head>
+<script src="http://www.w3schools.com/lib/w3data.js"></script>
+
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js" integrity="sha256-DI6NdAhhFRnO2k51mumYeDShet3I8AKCQf/tf7ARNhI=" crossorigin="anonymous"></script>
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+
+<body>
+<script>
+/*
+$(document).ready(function() {
+$(save_friends).click(function(){
+var save_friends = $(".save_friends");  //next button on friends page
+
+var answers = [];
+$.each($('.friend'), function() {
+answers.push($(this).val());
+});
+alert(answers);
+*/
+
+
+/*
+$.each(array, function(index, value) {
+    newHTML.push('<span>' + value + '</span>');
+});
+$(".element").html(newHTML.join("")); */
+</script>
+
+
+<form id="form">
+<input type="text" class="save_friends">
+<input type="text" class="save_friends">
+<input type="submit" data-role="button" data-icon="arrow-l" data-transition="slideup" data-iconpos="left" class="back">Back
+<input type="submit" class="submit">
+</form>
+<script>
+var new_array=[];
+$('#form').find('.save_friends').each(function(){
+new_array.push($(this).val());
+});
+</script>
+<script>
+var answ=[];
+$('.back').click(function(){
+$.each($('.save_friends'), function() {
+answ.push($(this).val());
+});
+});
+console.log(new_array);
+console.log(answ); 
+
+</script>
+<script>
+/* $(document).ready(function(){
+
+
+	var i = $('input').size() + 1;
+	
+	$('#add').click(function() {
+		$('<div><input type="text" class="field" name="dynamic[]" value="' + i + '" /></div>').fadeIn('slow').appendTo('.inputs');
+		i++;
+	});
+	
+	$('#remove').click(function() {
+	if(i > 1) {
+		$('.field:last').remove();
+		i--; 
+	}
+	});
+	
+	$('#reset').click(function() {
+	while(i > 2) {
+		$('.field:last').remove();
+		i--;
+	}
+	});
+	
+
+// here's our click function for when the forms submitted
+	
+	$('.submit').click(function(){
+								
+	
+	var answers = [];
+    $.each($('.field'), function() {
+        answers.push($(this).val()); 
+    });
+	
+    if(answers.length == 0) { 
+        answers = "none"; 
+    }   
+
+	alert(answers);
+	
+	return false;
+								
+	});
+	
+	
+
+}); */
+</script>
+
+
+<body></html>

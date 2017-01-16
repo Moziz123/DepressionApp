@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>WRAP</title>
+<meta charset="UTF-8"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<link rel="stylesheet" href="css/style.css"/>
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js" integrity="sha256-DI6NdAhhFRnO2k51mumYeDShet3I8AKCQf/tf7ARNhI=" crossorigin="anonymous"></script>
+  
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="js/script5.js"></script>
+
+<script>
+      $(function(){
+        $( "[data-role='header'], [data-role='footer']" ).toolbar();
+      }); 
+</script>
+<script>
+    function progress(percent, $element) {
+        var progressBarWidth = percent * $element.width() / 100;
+        $element.find('div').animate({ width: progressBarWidth }, 500).html(percent + "% ");
+    }
+</script>
+
+<script>
+$(document).on('pageinit', '#step2', function(){
+        progress(33, $('#progressBar2'));
+        });
+</script>
+<script>
+$(document).on('pageinit', '#step3', function(){
+        progress(66, $('#progressBar3'));
+        });
+</script>
+<script>
+$(document).on('pageinit', '#step4', function(){
+        progress(100, $('#progressBar4'));
+        });
+</script>
+
+<style>
+.transition (@animation: ease-in, @time: 1s) {
+  transition: width @animation @time;
+  -webkit-transition: width @animation @time;
+  -moz-transition: width @animation @time;
+  -o-transition: width @animation @time;
+}
+.bar-con{
+  background-color:#ccc;
+  height:0.5em;
+  margin-bottom:1em;
+}
+.bar{
+  float:left;
+  height:100%;
+  width:0%;
+}
+.bar-two .bar{
+  background-color:#1975FF;
+  .transition(@time:3s, @animation:ease-in-out);
+}
+
+.nav-bordera {
+border-top-left-radius:30px;
+border-bottom-left-radius:30px;   
+}
+
+.nav-borderb {
+border-top-right-radius:30px;
+border-bottom-right-radius:30px;  
+}
+h3 {
+text-align:center;
+}
+
+   #progressBar2, #progressBar3, #progressBar4, #progressBar5 {
+        width: 400px;
+        height: 22px;
+        border: 1px solid #111;
+        background-color: #292929;
+border-top-left-radius:30px;
+border-bottom-left-radius:30px;
+border-top-right-radius:30px;
+border-bottom-right-radius:30px;
+    }
+    #progressBar2 div, #progressBar3 div, #progressBar4 div, #progressBar5 div {
+        height: 100%;
+        color: #fff;
+        text-align: right;
+        line-height: 22px; /* same as #progressBar height if we want text middle aligned */
+        width: 0;
+        background-color: #0099ff;
+border-top-left-radius:30px;
+border-bottom-left-radius:30px;
+border-top-right-radius:30px;
+border-bottom-right-radius:30px;
+    }
+
+</style>
+</head>
+<body>
+ 
+
+<section id="step2" data-role="page">
+<div class="ui-content">
+<form action="" method="post">
+<div class="ui-grid-a" style="text-align:center;">
+<div id="progressBar2"><div></div></div></div>
+<br>
+ 
+<h3>Why have you decided to use this App?</h3>
+<br>
+<span class="error_form" id="ans1_error"></span>
+
+<label for="textarea-1"></label>
+<textarea name="ans1" id="ans1" >
+</textarea>
+<div class="ui-grid-a">
+                <div class="ui-block-a">
+<a href="#step1" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a>
+</div>
+                <div class="ui-block-b">
+<a href="#step3" id="ans1btn" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>
+</div>
+</div>
+</div>
+</section>
+
+<section id="step3" data-role="page">
+<div class="ui-content">
+<div class="ui-grid-a" style="text-align:center;">
+<div id="progressBar3"><div></div></div></div>
+<br>
+ 
+<br>
+<h3>What 3 things would you like to get out of this App?</h3>
+
+<span class="error_form" id="ans2_error"></span>
+
+<label for="textarea-2"></label>
+<textarea name="ans2" id="ans2" >
+</textarea>
+<div class="ui-grid-a">
+                <div class="ui-block-a">
+<a href="#step2" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a>
+</div>
+                <div class="ui-block-b">
+<a href="#step4" id="ans2btn" data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>
+</div>
+            </div>
+</div>
+</section>
+
+<section id="step4" data-role="page">
+<div class="ui-content">
+<div class="ui-grid-a" style="text-align:center;">
+<div id="progressBar4"><div></div></div></div>
+<br>
+ 
+<br>
+<h3>What constraints do you forsee and how can you play around them?</h3>
+
+<span class="error_form" id="ans3_error"></span>
+
+<label for="textarea-3"></label>
+<textarea name="ans3" id="ans3" >
+</textarea>
+<div class="ui-grid-a">
+                <div class="ui-block-a">
+<a href="#step3" data-role="button" data-icon="arrow-l" data-iconpos="left">Back</a>
+</div>
+                <div class="ui-block-b">
+
+<a href="http://depressionapp1.westeurope.cloudapp.azure.com/lvl1.html"  rel="external" id="ans3btn" data-role="button" data-icon="action" data-iconpos="right">Submit</a> 
+</div>
+            </div>
+</div>
+</form>
+
+</section>
+
+
+
+
+</body>
+</html>
